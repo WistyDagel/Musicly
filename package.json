@@ -1,0 +1,23 @@
+{
+  "name": "musicly",
+  "version": "1.0.0",
+  "description": "The New Tik Tok",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WistyDagel/Musicly.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WistyDagel/Musicly/issues"
+  },
+  "homepage": "https://github.com/WistyDagel/Musicly#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "formidable": "^1.2.2"
+  }
+}
