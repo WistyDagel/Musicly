@@ -12,10 +12,8 @@ const routes = require("./routes");
 
 routes(app);
 
+//Incudes the css file with the index page. Style would not load without this
 app.use(express.static('/css'));
 app.use(express.static(__dirname + '/'));
-app.get('/index.html', (req, res, next) => {
-    res.sendFile(__dirname + '/index.html');
-});
 
 app.listen(process.env.PORT || port);
