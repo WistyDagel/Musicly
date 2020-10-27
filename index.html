@@ -3,25 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
     <title>Document</title>
 </head>
 <body>
-    <div class="header">
-        <h1>Musicly</h1>
-        <h3>Upload your music below</h3>
-    </div>
-    <div class="content">
-        <form id="uploadForm" method="POST" action="/upload" enctype="multipart/form-data">
-            <label>Song Title</label>
-            <input type="text"/>
-            <label>Artist</label>
-            <input type="text"/>
-            <label>Genre</label>
-            <input type="text"/>
-            <input type="file" name="musicFile" accept=".mp3">
-            <input type="submit">
-        </form>
-        <div class="musicList"></div>
+    <div class="flexbox">
+        <div class="header">
+            <h1>Musicly</h1>
+            <p>Yes... we're better than Tik Tok</p>
+        </div>
+        <div class="formContent">
+            <h3>Upload your music below</h3>
+            <hr/>
+            <form id="uploadForm" method="POST" action="/upload" enctype="multipart/form-data">
+                <label>Song Title</label>
+                <input type="text"/><br/><br/>
+                <label>Artist</label>
+                <input type="text"/><br/><br/>
+                <label>Genre</label>
+                <input type="text"/><br/><br/>
+                <input type="file" name="musicFile" accept=".mp3">
+                <input type="submit">
+            </form>
+        </div>
+        <div class="musicList">
+            <h2>Current Music List</h2>
+            <hr/>
+        </div>
     </div>
 </body>
 </html>
