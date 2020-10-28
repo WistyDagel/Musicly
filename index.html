@@ -17,11 +17,11 @@
             <hr/>
             <form id="uploadForm" method="POST" action="/upload" enctype="multipart/form-data">
                 <label>Song Title</label>
-                <input type="text"/><br/><br/>
+                <input name="title" type="text"/><br/><br/>
                 <label>Artist</label>
-                <input type="text"/><br/><br/>
+                <input name="artist" type="text"/><br/><br/>
                 <label>Genre</label>
-                <input type="text"/><br/><br/>
+                <input name="genre" type="text"/><br/><br/>
                 <input type="file" name="musicFile" accept=".mp3">
                 <input type="submit">
             </form>

@@ -9,19 +9,27 @@ exports.uploadImage = (req, res) => {
     });
 
     var filePath;
-    form.parse(req);
-
+    let data = [];
+    form.parse(req, (err, fields, files) => {
+        data.push(fields)
+        console.log(data);
+    });
     // check if folder exists
     if (!fs.existsSync(__dirname + '/music/')) {
         console.log('folder no exist');
         fs.mkdirSync(__dirname + '/music/');
     }
 
+
     //Upload File
     form.on('fileBegin', (name, file) => {
+        // console.log(data)
+        data.path = './music/'+ file.name;
+        // data[data.length - 1].path = './music/'+ file.name;
         file.path = __dirname +'/music/'+ file.name;
         filePath = __dirname +'/music/'+ file.name;
-        console.log(filePath);
+        // console.log(filePath);
+        fs.writeFileSync('data.json',JSON.stringify(data, null, 4),{encoding:'utf-8'});
     });
     
 
