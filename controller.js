@@ -10,10 +10,6 @@ exports.uploadImage = (req, res) => {
 
     var filePath;
     let data = [];
-    form.parse(req, (err, fields, files) => {
-        data.push(fields)
-        console.log(data);
-    });
     // check if folder exists
     if (!fs.existsSync(__dirname + '/music/')) {
         console.log('folder no exist');
@@ -21,16 +17,30 @@ exports.uploadImage = (req, res) => {
     }
 
 
-    //Upload File
-    form.on('fileBegin', (name, file) => {
+    form.parse(req, (err, fields, files) => {
+        fields.path = files.musicFile.path
+        data.push(fields)
+        console.log(files.musicFile.path);
+        fs.writeFileSync('data.json',JSON.stringify(data, null, 4),{encoding:'utf-8'});
+    }).on('fileBegin', (name, file) => {
         // console.log(data)
         data.path = './music/'+ file.name;
         // data[data.length - 1].path = './music/'+ file.name;
         file.path = __dirname +'/music/'+ file.name;
         filePath = __dirname +'/music/'+ file.name;
         // console.log(filePath);
-        fs.writeFileSync('data.json',JSON.stringify(data, null, 4),{encoding:'utf-8'});
     });
+
+
+    // //Upload File
+    // form.on('fileBegin', (name, file) => {
+    //     // console.log(data)
+    //     data.path = './music/'+ file.name;
+    //     // data[data.length - 1].path = './music/'+ file.name;
+    //     file.path = __dirname +'/music/'+ file.name;
+    //     filePath = __dirname +'/music/'+ file.name;
+    //     // console.log(filePath);
+    // });
     
 
 
