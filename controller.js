@@ -9,7 +9,7 @@ exports.uploadImage = (req, res) => {
     });
 
     var filePath;
-    let data = [];
+    let data = JSON.parse(fs.readFileSync('data.json', {encoding:'utf-8'}));
     // check if folder exists
     if (!fs.existsSync(__dirname + '/music/')) {
         console.log('folder no exist');
