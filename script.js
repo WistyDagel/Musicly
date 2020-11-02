@@ -40,8 +40,7 @@ constructTable = data => {
         for (let j = 0; j < cols.length; j++) {
             const element = trow.insertCell(-1);
 
-            element.innerHTML = data[i][cols[j]];
-            
+            element.innerHTML = data[i][cols[j]];            
         }        
     }
 }
