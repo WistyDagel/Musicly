@@ -1,5 +1,6 @@
 var table = document.getElementById('table');
 
+
 fetch('./data.json')
 .then(res => res.json())
 .then(data => {
@@ -21,7 +22,7 @@ constructTable = data => {
             }
         }
     }
-    console.log(cols);
+    // console.log(cols);
 
     var tr = table.insertRow(-1);
     
@@ -40,7 +41,45 @@ constructTable = data => {
         for (let j = 0; j < cols.length; j++) {
             const element = trow.insertCell(-1);
 
-            element.innerHTML = data[i][cols[j]];            
+            element.innerHTML = data[i][cols[j]];
         }        
+        const element = trow.insertCell(-1);
+        
+        element.innerHTML = "▶";
+        element.addEventListener("click", ()=>{
+            playAudio(data[i][cols[3]], element);
+        });
+        element.classList = "playButton";
+    }
+}
+
+
+
+let audio = null;
+let isPlaying = false;
+let playButtons = document.getElementsByClassName("playButton");
+let playAudio = (path, element) =>{
+    if(!isPlaying){
+        audio = new Audio(path);
+        audio.play();
+        isPlaying = true;
+        element.innerHTML = "⏸"
+
+       for (let index = 0; index < playButtons.length; index++) {
+           const button = playButtons[index];
+           button.style.display = "none";
+       }
+
+      element.style.display = "block";
+
+    } else if(isPlaying && audio){
+        audio.pause();
+        isPlaying = false;
+        element.innerHTML = "▶";
+        
+       for (let index = 0; index < playButtons.length; index++) {
+        const button = playButtons[index];
+        button.style.display = "block";
+    }
     }
 }

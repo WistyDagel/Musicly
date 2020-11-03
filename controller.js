@@ -26,8 +26,8 @@ exports.uploadImage = (req, res) => {
         // console.log(data)
         data.path = './music/'+ file.name;
         // data[data.length - 1].path = './music/'+ file.name;
-        file.path = __dirname +'/music/'+ file.name;
-        filePath = __dirname +'/music/'+ file.name;
+        file.path = './music/'+ file.name;
+        filePath = './music/'+ file.name;
         // console.log(filePath);
     });
 
