@@ -70,7 +70,7 @@ let playAudio = (path, element) =>{
            button.style.display = "none";
        }
 
-      element.style.display = "block";
+       element.style.display = "block";
 
     } else if(isPlaying && audio){
         audio.pause();
