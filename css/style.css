@@ -83,6 +83,6 @@ th {
 
 .playButton { 
     cursor: pointer;
-    width: 5vh;
+    width: auto;
     height: auto;
 }
