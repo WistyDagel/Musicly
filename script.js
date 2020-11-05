@@ -128,4 +128,4 @@ switchTheme.onclick = () => {
         theme.href = "css/dark.css";
         isDark = !isDark;
     }
-}
+}}
