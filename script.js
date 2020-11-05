@@ -72,7 +72,13 @@ let playAudio = (path, element) =>{
         audio = new Audio(path);
         audio.addEventListener('ended', evt => {
             console.log('ended', element);
-            element.innerHTML = '▶';
+            isPlaying = false;
+            element.innerHTML = "▶";
+            
+            for (let index = 0; index < playButtons.length; index++) {
+            const button = playButtons[index];
+            button.style.display = "block";
+        }
         });
         audio.play();
         isPlaying = true;
