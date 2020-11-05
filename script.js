@@ -102,3 +102,18 @@ let playAudio = (path, element) =>{
     }
     }
 }
+
+
+let index = 0;
+let playAll = () =>{
+    playButtons[index].click();
+
+    audio.addEventListener('ended', ()=>{
+        if(index<(playButtons.length)-1){
+            index++;
+            playAll();
+        } else{
+            index = 0;
+        }
+    })
+}
