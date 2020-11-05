@@ -71,7 +71,13 @@ let playAudio = (path, element) =>{
         audio = new Audio(path);
         audio.addEventListener('ended', evt => {
             console.log('ended', element);
-            element.innerHTML = '▶';
+            isPlaying = false;
+            element.innerHTML = "▶";
+            
+            for (let index = 0; index < playButtons.length; index++) {
+            const button = playButtons[index];
+            button.style.display = "block";
+        }
         });
         audio.play();
         isPlaying = true;
@@ -96,6 +102,18 @@ let playAudio = (path, element) =>{
     }
 }
 
+let index = 0;
+let playAll = () =>{
+playButtons[index].click();
+
+audio.addEventListener('ended', ()=>{
+    if(index<(playButtons.length)-1){
+        index++;
+        playAll();
+    } else{
+        index = 0;
+    }
+})
 
 //JS for switching the theme 
 var switchTheme = document.getElementById('switch');
