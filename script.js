@@ -58,19 +58,32 @@ constructTable = data => {
 let audio = null;
 let isPlaying = false;
 let playButtons = document.getElementsByClassName("playButton");
+
+// for(let singleButton of playButtons) {
+//     console.log(singleButton);
+//     singleButton.addEventListener('ended', evt => {
+//         console.log('ended', singleButton);
+//         singleButton.innerHTML = '▶';
+//     });
+// }
+
 let playAudio = (path, element) =>{
     if(!isPlaying){
         audio = new Audio(path);
+        audio.addEventListener('ended', evt => {
+            console.log('ended', element);
+            element.innerHTML = '▶';
+        });
         audio.play();
         isPlaying = true;
         element.innerHTML = "⏸"
 
-       for (let index = 0; index < playButtons.length; index++) {
-           const button = playButtons[index];
-           button.style.display = "none";
-       }
+        for (let index = 0; index < playButtons.length; index++) {
+            const button = playButtons[index];
+            button.style.display = "none";
+        }
 
-      element.style.display = "block";
+    element.style.display = "block";
 
     } else if(isPlaying && audio){
         audio.pause();
