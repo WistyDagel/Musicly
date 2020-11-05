@@ -1,6 +1,5 @@
 var table = document.getElementById('table');
 
-
 fetch('./data.json')
 .then(res => res.json())
 .then(data => {
@@ -94,5 +93,21 @@ let playAudio = (path, element) =>{
         const button = playButtons[index];
         button.style.display = "block";
     }
+    }
+}
+
+
+//JS for switching the theme 
+var switchTheme = document.getElementById('switch');
+var theme = document.getElementById('theme');
+var isDark = false;
+
+switchTheme.onclick = () => {
+    if(isDark){
+        theme.href = "css/light.css";
+        isDark = !isDark;
+    } else { 
+        theme.href = "css/dark.css";
+        isDark = !isDark;
     }
 }

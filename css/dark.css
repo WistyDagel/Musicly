@@ -1,6 +1,8 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
+    background-color: #191414;
+    color: #fff;
 }
 
 .flexbox {
@@ -16,7 +18,7 @@ body {
     flex: 1;
     text-align: center;
     flex-direction: column;
-    color: #fff;
+    color: #191414;
     background-color: #1DB954;
     width: 100%;
 }
@@ -65,16 +67,18 @@ table td, table th {
     padding: 9px;
 }
   
-table tr:nth-child(even){background-color: #f2f2f2;}
+table tr:nth-child(even){background-color: #fff; color: #191414;}
+table tr:nth-child(even):hover{background-color: #e2e2e2; color: #191414;}
+
   
-table tr:hover {background-color: #ddd;}
+table tr:hover {background-color: #362c2c;}
   
 table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
     background-color: #1DB954;
-    color: #191414;  
+    color: #fff;  
 }
 
 th {
@@ -85,4 +89,17 @@ th {
     cursor: pointer;
     width: auto;
     height: auto;
+}
+
+.themeSwitch { 
+    padding-bottom: 100px;
+}
+
+.themeSwitch > button{
+    background-color: #1DB954;
+    color: #191414;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 8px;
 }
