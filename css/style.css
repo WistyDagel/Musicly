@@ -16,8 +16,8 @@ body {
     flex: 1;
     text-align: center;
     flex-direction: column;
-    color: aliceblue;
-    background-color: darkgray;
+    color: #fff;
+    background-color: #1DB954;
     width: 100%;
 }
 
@@ -73,10 +73,16 @@ table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: darkgray;
-    color: white;  
+    background-color: #1DB954;
+    color: #191414;  
 }
 
 th {
     text-transform: uppercase;
+}
+
+.playButton { 
+    cursor: pointer;
+    width: 5vh;
+    height: auto;
 }

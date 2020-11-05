@@ -90,7 +90,7 @@ let playAudio = (path, element) =>{
         isPlaying = false;
         element.innerHTML = "▶";
         
-       for (let index = 0; index < playButtons.length; index++) {
+        for (let index = 0; index < playButtons.length; index++) {
         const button = playButtons[index];
         button.style.display = "block";
     }
