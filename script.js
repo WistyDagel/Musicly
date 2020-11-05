@@ -27,7 +27,7 @@ constructTable = data => {
     var tr = table.insertRow(-1);
     
     //Creates the table headers
-    for (let i = 0; i < cols.length; i++) {
+    for (let i = 0; i < cols.length -1; i++) {
         
         var th = document.createElement("th");
         th.innerHTML = cols[i];
@@ -38,9 +38,9 @@ constructTable = data => {
     //Creates the table row content
     for (let i = 0; i < data.length; i++) {
         var trow = table.insertRow(-1);
-        for (let j = 0; j < cols.length; j++) {
+        for (let j = 0; j < cols.length - 1; j++) {
             const element = trow.insertCell(-1);
-
+            
             element.innerHTML = data[i][cols[j]];
         }        
         const element = trow.insertCell(-1);
