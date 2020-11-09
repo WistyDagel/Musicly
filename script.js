@@ -121,6 +121,7 @@ var theme = document.getElementById('theme');
 var isDark = false;
 
 switchTheme.onclick = () => {
+    console.log('theme');
     if(isDark){
         theme.href = "css/light.css";
         isDark = !isDark;
