@@ -114,7 +114,7 @@ audio.addEventListener('ended', ()=>{
         index = 0;
     }
 })
-
+}
 //JS for switching the theme 
 var switchTheme = document.getElementById('switch');
 var theme = document.getElementById('theme');
@@ -129,4 +129,4 @@ switchTheme.onclick = () => {
         theme.href = "css/dark.css";
         isDark = !isDark;
     }
-}}
+}
